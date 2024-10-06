@@ -1,0 +1,41 @@
+{
+    "users": [
+        {
+            "username": "admin",
+            "password": "admin123",
+            "role": "Admin"
+        },
+        {
+            "username": "mike",
+            "password": "mike123",
+            "role": "Employee"
+        },
+        {
+            "username": "anna",
+            "password": "anna123",
+            "role": "Employee"
+        },
+        {
+            "username": "sally",
+            "password": "sally123",
+            "role": "Employee"
+        }
+    ],
+    "shop": {
+        "products": [
+            {
+                "name": "Car",
+                "price": 15.0
+            },
+            {
+                "name": "Ball",
+                "price": 10.0
+            },
+            {
+                "name": "Cookies",
+                "price": 5.0
+            }
+        ],
+        "balance": 160.0
+    }
+}

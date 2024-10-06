@@ -1,0 +1,14 @@
+Raport 
+====================
+Uzytkownicy:
+- admin (Admin)
+- mike (Employee)
+- anna (Employee)
+- sally (Employee)
+
+Produkty:
+- Car ($15.0)
+- Ball ($10.0)
+- Cookies ($5.0)
+
+Stan finansow: $160.0
