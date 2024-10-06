@@ -1,6 +1,7 @@
 import json
 from admin import Admin
 from employee import Employee
+from importer import Importer
 from shop import Shop
 from report import generate_report
 
@@ -10,17 +11,53 @@ def load_data():
             return json.load(file)
     except:
         return {
-            "users": [
-                {"username": "admin", "password": "admin123", "role": "Admin"},
-                {"username": "mike", "password": "mike123", "role": "Employee"},
-                {"username": "anna", "password": "anna123", "role": "Employee"}
-            ],
+            "users": [ 
+        {
+            "username": "admin",
+            "password": "admin123",
+            "role": "Admin"
+        },
+        {
+            "username": "milo",
+            "password": "milo123",
+            "role": "Importer"
+        },
+        {
+            "username": "anna",
+            "password": "anna123",
+            "role": "Employee"
+        }],
             "shop": {
                 "products": [
-                    {"name": "Car", "price": 15.0},
-                    {"name": "Ball", "price": 10.0},
-                    {"name": "Cookies", "price": 5.0}
-                ],
+            {
+                "name": "Car",
+                "price": 15.0
+            },
+            {
+                "name": "Ball",
+                "price": 10.0
+            },
+            {
+                "name": "Cookies",
+                "price": 5.0
+            },
+            {
+                "name": "Lego",
+                "price": 35.0
+            },
+            {
+                "name": "Sweet",
+                "price": 8.0
+            },
+            {
+                "name": "Water",
+                "price": 3.0
+            },
+            {
+                "name": "Phone",
+                "price": 500.0
+            }
+        ],
                 "balance": 150.0
             }
         }
@@ -51,6 +88,8 @@ def create_user(user_data):
         return Admin(user_data['username'], user_data['password'], user_data['role'])
     elif user_data['role'] == 'Employee':
         return Employee(user_data['username'], user_data['password'], user_data['role'])
+    elif user_data['role'] == 'Importer':
+        return Importer(user_data['username'], user_data['password'], user_data['role'])
 
 
 def create_shop(shop_data):
@@ -84,6 +123,9 @@ else:
         print("Sprzedaj produkt")
         shop.employee_shop(user)
 
+    elif isinstance(user, Importer):
+        print("Sprowadz produkt")
+        shop.importer_shop(user)
+
     save_json({"users": [u.to_dictionary() for u in users], "shop": shop.to_dictionary()})
     generate_report(users, shop)
-

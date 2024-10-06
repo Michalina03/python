@@ -6,18 +6,13 @@
             "role": "Admin"
         },
         {
-            "username": "mike",
-            "password": "mike123",
-            "role": "Employee"
+            "username": "milo",
+            "password": "milo123",
+            "role": "Importer"
         },
         {
             "username": "anna",
             "password": "anna123",
-            "role": "Employee"
-        },
-        {
-            "username": "sally",
-            "password": "sally123",
             "role": "Employee"
         }
     ],
@@ -34,8 +29,24 @@
             {
                 "name": "Cookies",
                 "price": 5.0
+            },
+            {
+                "name": "Lego",
+                "price": 35.0
+            },
+            {
+                "name": "Sweet",
+                "price": 8.0
+            },
+            {
+                "name": "Water",
+                "price": 3.0
+            },
+            {
+                "name": "Phone",
+                "price": 500.0
             }
         ],
-        "balance": 160.0
+        "balance": 145.0
     }
 }

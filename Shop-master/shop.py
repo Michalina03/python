@@ -26,7 +26,20 @@ class Shop:
             self.balance += product['price']
             print(f"Sprzedano produkt: {product['name']} za ${product['price']}")
         else:
-            print("Produkt niedostępny.")
+            print("Produkt niedostępny")
+
+    def importer_shop(self, user):
+        print("Dostępne produkty:")
+        for product in self.products:
+            print(f"- {product['name']} (${product['price']})")
+        
+        name = input("Podaj nazwę produktu do sprzedaży: ")
+        product = next((p for p in self.products if p['name'] == name), None)
+        if product:
+            self.balance -= product['price']
+            print(f"Sprowadzono produkt: {product['name']} za ${product['price']}")
+        else:
+            print("Produkt niedostępny")
 
     def to_dictionary(self):
         return {
