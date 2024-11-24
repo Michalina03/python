@@ -104,10 +104,10 @@ for liczba in liczby:
 #======================================================
 
 uczen = {
-    'imie': 'Adrian',
-    'nazwisko': 'Poniatowski',
-    'wiek':26,
-    'matematyka':[1,1,2,3,4,5],
+    'imie': 'ala',
+    'nazwisko': 'kot',
+    'wiek':16,
+    'matematyka':[1,2,3,4,5],
     'angielski':[2,3,4,5,6,1],
     'polski':[5,3,2,10]
 }
