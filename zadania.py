@@ -6,4 +6,4 @@
 
 4. Napisz funkcje generująca plik tekstowy zawierający liczby ciągu arytmetycznego 
 
-5. Napisz program liczący średnia charmoniczna podanej przez użytkownika liczby 
+5. Stwórz strone internetowa z nagłówkiem i tekstem. Dodaj menu z galerią użyj flex boxa
