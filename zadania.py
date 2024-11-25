@@ -6,4 +6,4 @@
 
 4. Napisz funkcje generująca plik tekstowy zawierający liczby ciągu arytmetycznego 
 
-5. Stwórz strone internetowa z nagłówkiem i tekstem. Dodaj menu z galerią użyj flex boxa
+5. Stwórz strone internetowa z nagłówkiem i tekstem. Dodaj galerię zdjęć z flex boxem
