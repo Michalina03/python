@@ -6,4 +6,4 @@
 
 4. Napisz funkcje generująca plik tekstowy zawierający liczby ciągu arytmetycznego 
 
-5. Napisz program do którego możemy wprowadzić dowolne zdanie. Niech program wyświetli ile mamy liter k w tym zdaniu.
+5. Napisz program liczący średnia charmoniczna podanej przez użytkownika liczby 
