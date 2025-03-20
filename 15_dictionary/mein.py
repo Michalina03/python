@@ -1,29 +1,31 @@
-from lesson.dictionary.meinD import (
-    slownik1,
-    słownik2,
-    słownik3,
-    edycja,
-    inf_biblioteka,
-    usuwanie,
-)
+import uuid
+from function import inf, edycja, usuwanie, dodawanie
 
-ksiązka1 = {"tytuł": "Dzieci z Bulerbyn", "ilość_stron": 324}
-ksiązka2 = {"tytuł": "Pies który jeżdził koleją", "ilość_stron": 94}
-ksiązka3 = {"tytuł": "Ania z zielonego wzgórza", "ilość_stron": 309}
+# Tworzymy książki z unikalnymi ID
+ksiazka1 = {"id": str(uuid.uuid4()), "nazwa": "Dzieci z Bulerbyn", "liczbaStron": 324}
+ksiazka2 = {"id": str(uuid.uuid4()), "nazwa": "Pies który jezdzil koleja", "liczbaStron": 94}
+ksiazka3 = {"id": str(uuid.uuid4()), "nazwa": "Ania z zielonego wzgorza", "liczbaStron": 309}
 
-biblioteka = [ksiązka1, ksiązka2, ksiązka3]
-
+biblioteka = [ksiazka1, ksiazka2, ksiazka3]
 
 while True:
-    print("b - biblioteka ksiązek")
-    print("e - edycja słownika")
-    print("u - usuwanie słowników")
-    inp = input().lower()
-    if inp == "b":
-        inf_biblioteka(ksiązka1, ksiązka2, ksiązka3)
+    print("\ni - wyswietl biblioteke")
+    print("d - dodaj ksiazke")
+    print("e - edytuj ksiazke")
+    print("u - usun ksiazke")
+    print("q - wyjscie")
+
+    inp = input("Wybierz opcje: ").lower()
+
+    if inp == "i":
+        inf(biblioteka)
+    elif inp == "d":
+        dodawanie(biblioteka)
     elif inp == "e":
-        edycja(ksiązka1, ksiązka2, ksiązka3)
+        edycja(biblioteka)
     elif inp == "u":
-        usuwanie(ksiązka1, ksiązka2, ksiązka3)
-    else:
+        usuwanie(biblioteka)
+    elif inp == "q":
         break
+    else:
+        print("Nie ma takiej komendy")
