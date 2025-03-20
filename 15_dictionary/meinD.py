@@ -1,75 +1,54 @@
-def slownik1(ksiązka1):
-    for k, v in ksiązka1.items():
-        print(f"klucz - {k} ")
-        print(f"wartość - {v}")
+import uuid
+
+def inf(lst):
+    for dic in lst:
+        print(f"ID: {dic['id']}")
+        print(f"Nazwa: {dic['nazwa']}")
+        print(f"Liczba stron: {dic['liczbaStron']}")
+        print("---" * 10)
 
 
-def słownik2(ksiązka2):
-    for k, v in ksiązka2.items():
-        print(f"klucz - {k} ")
-        print(f"wartość - {v}")
+def dodawanie(lst):
+    nazwa = input("Podaj nazwe ksiazki: ")
+    liczba_stron = input("Podaj liczbe stron: ")
+
+    nowa_ksiazka = {
+        "id": str(uuid.uuid4()),  # Generujemy unikalne ID
+        "nazwa": nazwa,
+        "liczbaStron": liczba_stron
+    }
+
+    lst.append(nowa_ksiazka)
+    print("Ksiazka zostala dodana!")
 
 
-def słownik3(ksiązka3):
-    for k, v in ksiązka3.items():
-        print(f"klucz - {k} ")
-        print(f"wartość - {v}")
+def edycja(lst):
+    """ Edytuje dane ksiazki na podstawie ID """
+    book_id = input("Podaj ID ksiazki do edycji: ")
+    
+    for ksiazka in lst:
+        if ksiazka["id"] == book_id:
+            print("Obecne dane ksiazki:")
+            print(f"Nazwa: {ksiazka['nazwa']}")
+            print(f"Liczba stron: {ksiazka['liczbaStron']}")
+
+            ksiazka["nazwa"] = input("Podaj nowa nazwe: ")
+            ksiazka["liczbaStron"] = input("Podaj nowa liczbe stron: ")
+            print("Ksiazka zostala zaktualizowana!")
+            return
+
+    print("Nie znaleziono ksiazki o podanym ID")
 
 
-def edycja(ksiązka1, ksiązka2, ksiązka3):
-    print("Wybierz słownik który chcesz edytować(1,2,3)")
-    inp = input().lower()
-    if inp == "1":
-        print("--" * 25)
-        print("wprowadz klucz jaki chcesz edytować")
-        print("--" * 25)
-        slownik1(ksiązka1)
-        print("--" * 25)
-        inp = input()
-        ksiązka1[inp] = input("Podaj nowe dane")
-    elif inp == "2":
-        print("--" * 25)
-        print("wprowadz klucz jaki chcesz edytować")
-        print("--" * 25)
-        słownik2(ksiązka2)
-        print("--" * 25)
-        inp = input()
-        ksiązka2[inp] = input("Podaj nowe dane")
-    elif inp == "3":
-        print("--" * 25)
-        print("wprowadz klucz jaki chcesz edytować")
-        print("--" * 25)
-        słownik3(ksiązka3)
-        print("--" * 25)
-        inp = input()
-        ksiązka3[inp] = input("Podaj nowe dane")
+def usuwanie(lst):
+    """ Usuwa ksiazke na podstawie ID """
+    book_id = input("Podaj ID ksiazki do usuniecia: ")
 
+    for ksiazka in lst:
+        if ksiazka["id"] == book_id:
+            lst.remove(ksiazka)
+            print("Ksiazka zostala usunieta!")
+            return
 
-def inf_biblioteka(ksiązka1, ksiązka2, ksiązka3):
-    while True:
-        print("1 - ksiązka1")
-        print("2 - ksiażka2")
-        print("3 - ksiązka3")
-        inp = input().lower()
-        if inp == "1":
-            slownik1(ksiązka1)
-        elif inp == "2":
-            słownik2(ksiązka2)
-        elif inp == "3":
-            słownik3(ksiązka3)
-        else:
-            break
+    print("Nie znaleziono ksiazki o podanym ID")
 
-
-def usuwanie(ksiązka1, ksiązka2, ksiązka3):
-    print("Wybierz słownik który chcesz edytować(1,2,3)")
-    inp = input().lower()
-    if inp == "1":
-        print("--" * 25)
-        del ksiązka1["tytuł", "ilość stron"]
-    elif inp == "2":
-        print("--" * 25)
-        del ksiązka2["tytuł", "ilość stron"]
-    elif inp == "3":
-        print("--" * 25)
-        del ksiązka3["tytuł", "ilość stron"]
